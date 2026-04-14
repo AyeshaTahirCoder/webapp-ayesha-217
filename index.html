@@ -1,24 +1,250 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Cloud Web App</title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 100px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        p {
-            font-size: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayesha Tahir | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6a5acd;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+      min-height: 100vh;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--dark), #16213e);
+      color: white;
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 2rem 80px;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+    
+    .hero .name {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 8px 20px rgba(106, 90, 205, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(106, 90, 205, 0.4);
+    }
+    
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    
+    .profile-pic {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid white;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    section {
+      padding: 80px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+    }
+    
+    h2:after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .about {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .about p {
+      font-size: 1.15rem;
+      color: #444;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .registration {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #666;
+    }
+    
+    .registration span {
+      background: #e0d9ff;
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero {
+        padding: 80px 1rem 60px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Your Name: Ayesha Tahir</h1>
-    <p>Registration Number: NUM-BSCS-2022-17</p>
+  <header>
+    <nav>
+      <div class="logo">Ayesha Tahir</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="name">Ayesha Tahir</span></h1>
+      <p>Welcome to my personal space. I'm passionate about learning, creating, and making a positive impact.</p>
+      <a href="#about" class="btn">Know More About Me</a>
+    </div>
+    
+    <div class="hero-image">
+      <!-- Placeholder for your photo - replace the src with your actual photo URL or local file -->
+      <img src="https://via.placeholder.com/320x320/6a5acd/ffffff?text=Ayesha" 
+           alt="Ayesha Tahir" class="profile-pic">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about">
+      <p>
+        I am Ayesha Tahir, a dedicated and enthusiastic individual with a strong passion for technology, innovation, and continuous learning. 
+        My registration number is <strong>XXXX-XXX</strong>.
+      </p>
+      
+      <div class="registration">
+        Registration Number: <span>XXXX-XXX</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Ayesha Tahir. All Rights Reserved.</p>
+    <p>Made with ❤️ and beautiful code</p>
+  </footer>
 </body>
 </html>
